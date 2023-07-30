@@ -21,6 +21,8 @@
  * Este código está protegido por los derechos de autor y copyright      							*
  * aplicables. Por favor, consulte el archivo ReadMe.txt que acompaña    							*
  * a este archivo para ver los términos de la licencia correspondiente.   							*
+ * **************************************************************************************************
+ * Se reconoce la participación de Martín Pissia como co-autor de la primera versión de este código	*
  ****************************************************************************************************/
 
 #ifndef MEF_MODO_H_
@@ -29,19 +31,15 @@
 /*==================[inclusions]=============================================*/
 #include <mef/mef_DeteccionTrama.h>
 #include <mef/mef_plot3D.h>
-#include <offBoard_KL46/Oled/oled.h>
-#include <onBoard_KL46/SD2_board.h>
-#include <onBoard_KL46/SD2_LCD_I2C.h>
-#include <onBoard_KL46/SD2_SwitchsAndLeds.h>
+#include <offBoard/Oled/offBoard_oledDriver.h>
+#include <onBoard/onBoard_LCD_I2C.h>
+#include <onBoard/onBoard_SwitchsAndLeds.h>
+#include <onBoard/onBoard_General.h>
 
 /*==================[cplusplus]==============================================*/
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/*==================[macros]=================================================*/
-#define MEF_DETECCION_TRAMA	"SD2 TP3 Master"
-#define MEF_PLOT_3D			"Plot 3D"
 
 /*==================[typedef]================================================*/
 typedef enum {

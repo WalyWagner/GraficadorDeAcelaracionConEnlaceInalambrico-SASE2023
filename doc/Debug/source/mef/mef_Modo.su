@@ -1,0 +1,4 @@
+../source/mef/mef_Modo.c:41:6:sendMessageToOled	24	static
+../source/mef/mef_Modo.c:47:6:mefModo_init	8	static
+../source/mef/mef_Modo.c:62:6:mefModo	8	static
+../source/mef/mef_Modo.c:86:6:mefModo_task1ms	8	static

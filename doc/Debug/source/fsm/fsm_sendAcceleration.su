@@ -1,0 +1,5 @@
+../source/fsm/fsm_sendAcceleration.c:42:6:sendAcceleration	56	static
+../source/fsm/fsm_sendAcceleration.c:57:6:fsm_sendAcceleration_init	8	static
+../source/fsm/fsm_sendAcceleration.c:61:6:fsm_sendAcceleration_reset	8	static
+../source/fsm/fsm_sendAcceleration.c:66:6:fsm_sendAcceleration_execute	24	static
+../source/fsm/fsm_sendAcceleration.c:88:6:fsm_sendAcceleration_task1ms	8	static

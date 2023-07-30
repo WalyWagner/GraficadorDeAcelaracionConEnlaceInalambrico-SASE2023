@@ -21,6 +21,8 @@
  * Este código está protegido por los derechos de autor y copyright      							*
  * aplicables. Por favor, consulte el archivo ReadMe.txt que acompaña    							*
  * a este archivo para ver los términos de la licencia correspondiente.   							*
+ * **************************************************************************************************
+ * Se reconoce la participación de Martín Pissia como co-autor de la primera versión de este código	*
  ****************************************************************************************************/
 
 #include "mef_DeteccionTrama.h"
@@ -31,15 +33,15 @@ static char trama[BYTES_TRAMA];
 static int size;
 
 /*==================[internal functions definition]==========================*/
-void procTrama(char *trama, int size) {													//subrutina encargada de procesar las tramas
+static void mef_DeteccionTrama_procTrama(char *trama, int size) {													//subrutina encargada de procesar las tramas
 	if((size >= strlen(ID_GRUPO)) && strncmp(ID_GRUPO, trama, strlen(ID_GRUPO))==0){	//se procesa el ID del grupo
-		if(procPeticion(trama, size)){													//se procesa la peticion
-			UART_DMA_envDatos(get_bufferEnv(), strlen((char*)get_bufferEnv()));			//si el ID y peticion son validos, se envia la trama
+		if(mefDeteccionTrama_ProcPeticion_procPeticion(trama, size)){													//se procesa la peticion
+			dataTransfer_EnvDMA_RecRingBuff_envDatos(mefDeteccionTrama_ProcPeticion_get_bufferEnv(), strlen((char*)mefDeteccionTrama_ProcPeticion_get_bufferEnv()));//si el ID y peticion son validos, se envia la trama
 		}
 	}
 }
 
-void limpiarTrama() {
+static void mef_DeteccionTrama_limpiarTrama() {
 	memset(trama, FIN_CADENA, sizeof(char) * BYTES_TRAMA);
 	size = 0;
 }
@@ -51,12 +53,12 @@ void mefDeteccionTrama_init(){
 
 void mefDeteccionTrama_reset(){
 	estMefDeteccionTrama = ESPERANDO;
-	limpiarTrama();
+	mef_DeteccionTrama_limpiarTrama();
 }
 
 void mefDeteccionTrama() {
     uint8_t byteRec;
-    uint32_t contByteRec = UART_RingBuffer_recDatos(&byteRec, sizeof(byteRec));
+    uint32_t contByteRec = dataTransfer_EnvDMA_RecRingBuff_recDatos(&byteRec, sizeof(byteRec));
 
     switch (estMefDeteccionTrama) {
     	case ESPERANDO:
@@ -70,19 +72,19 @@ void mefDeteccionTrama() {
 			if (contByteRec) {						//redundancia de seguridad
 				switch (byteRec) {
 					case BYTE_FIN:
-						procTrama(trama, size);
-						limpiarTrama();
+						mef_DeteccionTrama_procTrama(trama, size);
+						mef_DeteccionTrama_limpiarTrama();
 						estMefDeteccionTrama = ESPERANDO;
 						break;
 
 					case BYTE_INICIO:
-						limpiarTrama();
+						mef_DeteccionTrama_limpiarTrama();
 						trama[size++] = byteRec;
 						break;
 
 					default:
 						if (size >= BYTES_TRAMA) {
-							limpiarTrama();
+							mef_DeteccionTrama_limpiarTrama();
 							estMefDeteccionTrama = ESPERANDO;
 						} else {
 							trama[size++] = byteRec;

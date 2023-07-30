@@ -28,19 +28,18 @@
 
 int main(void){
 
-	Board_init();									//Inicializa periféricos
-	UART_RingBuffer_DMA_init();						//Inicializa UART+DMA y crea el Buffer Circular
+	onBoard_General_init();							//Inicializa la Board + Periféricos
+	dataTransfer_EnvDMA_RecRingBuff_Init();			//Inicializa UART+DMA y crea el Buffer Circular
 	mefModo_init();									//Inicializa la Máquina de Estados Finitos (MEF)
-	SysTick_Config(SystemCoreClock / 1000U); 		//Inicializa interrupción de systick cada 1 ms
+	SysTick_Config(SystemCoreClock / 1000U); 		//Configura interrupción de systick cada 1 ms
 
     while(1){
-    	mefModo();									//Polling sobre la MEF
+    	mefModo();
     }
 }
 
 void SysTick_Handler(void) {						//El SysTick interrumpe cada 1ms
-	key_periodicTask1ms();
+	onBoard_SwitchsAndLeds_key_periodicTask1ms();
 	mefModo_task1ms();
 }
-
 /*==========================================[end of file]==========================================*/

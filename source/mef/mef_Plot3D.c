@@ -21,6 +21,8 @@
  * Este código está protegido por los derechos de autor y copyright      							*
  * aplicables. Por favor, consulte el archivo ReadMe.txt que acompaña    							*
  * a este archivo para ver los términos de la licencia correspondiente.   							*
+ * **************************************************************************************************
+ * Se reconoce la participación de Martín Pissia como co-autor de la primera versión de este código	*
  ****************************************************************************************************/
 
 #include "mef_Plot3D.h"
@@ -31,18 +33,18 @@ static int timerDelay = DELAY;
 
 /*==================[internal functions declaration]=========================*/
 
-void envioAcel() {
+static void mefPlot3D_enviaAcel() {
 	uint8_t envioMje[15];
 	int16_t accX,accY,accZ;
-	//if (mma8451_isDataReady()){		//No es necesario
-		//		accX= mma8451_getAcX();
-		//		accY= mma8451_getAcY();
-		//		accZ= mma8451_getAcZ();
-		mma8451_getAcXYZ(&accX, &accY, &accZ);
+	//if (nBoard_Mma8451_isDataReady()){		//No es necesario
+		//		accX= nBoard_Mma8451_getAcX();
+		//		accY= nBoard_Mma8451_getAcY();
+		//		accZ= nBoard_Mma8451_getAcZ();
+		onBoard_Mma8451_getAcXYZ(&accX, &accY, &accZ);
 		sprintf((char*)envioMje, "%d %d %d\n", (int)accX, (int)accY, (int)accZ);
 
 	//}
-	UART_DMA_envDatos(envioMje, strlen((char*)envioMje));
+		dataTransfer_EnvDMA_RecRingBuff_envDatos(envioMje, strlen((char*)envioMje));
 }
 
 /*==================[external functions declaration]=========================*/
@@ -65,8 +67,8 @@ void mefPlot3D() {
 			break;
 
 		case EST_ENVIANDO:
-			if (mma8451_isDataReady()) {
-				envioAcel();
+			if (onBoard_Mma8451_isDataReady()) {
+				mefPlot3D_enviaAcel();
 				mefPlot3D_reset();
 			}
 			break;

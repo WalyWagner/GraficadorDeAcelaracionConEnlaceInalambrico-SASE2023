@@ -1,0 +1,5 @@
+../source/mef/fsm_frameDetection.c:42:6:handleFrame	32	static
+../source/mef/fsm_frameDetection.c:62:6:clearFrame	8	static
+../source/mef/fsm_frameDetection.c:68:6:fsm_frameDetection_init	8	static
+../source/mef/fsm_frameDetection.c:72:6:fsm_frameDetection_reset	8	static
+../source/mef/fsm_frameDetection.c:77:6:fsm_frameDetection_execute	16	static

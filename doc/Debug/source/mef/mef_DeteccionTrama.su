@@ -1,0 +1,5 @@
+../source/mef/mef_DeteccionTrama.c:43:6:procTrama	24	static
+../source/mef/mef_DeteccionTrama.c:51:6:limpiarTrama	8	static
+../source/mef/mef_DeteccionTrama.c:57:6:mefDeteccionTrama_init	8	static
+../source/mef/mef_DeteccionTrama.c:61:6:mefDeteccionTrama_reset	8	static
+../source/mef/mef_DeteccionTrama.c:66:6:mefDeteccionTrama	16	static

@@ -1,0 +1,4 @@
+../source/fsm/fsm_mode.c:40:6:sendMessageToOled	24	static
+../source/fsm/fsm_mode.c:46:6:fsm_mode_init	8	static
+../source/fsm/fsm_mode.c:61:6:fsm_mode_execute	24	static
+../source/fsm/fsm_mode.c:90:6:fsm_mode_task1ms	8	static

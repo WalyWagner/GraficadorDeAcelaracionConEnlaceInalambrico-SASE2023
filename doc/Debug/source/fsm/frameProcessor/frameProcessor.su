@@ -1,0 +1,5 @@
+../source/fsm/frameProcessor/frameProcessor.c:41:6:LEDS	8	static
+../source/fsm/frameProcessor/frameProcessor.c:84:6:SWITCH	8	static
+../source/fsm/frameProcessor/frameProcessor.c:108:6:ACELEROM	40	static
+../source/fsm/frameProcessor/frameProcessor.c:123:10:get_bufferEnv	8	static
+../source/fsm/frameProcessor/frameProcessor.c:125:6:processFrame	16	static

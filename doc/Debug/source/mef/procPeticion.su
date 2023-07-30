@@ -1,0 +1,5 @@
+../source/mef/procPeticion.c:42:6:Leds	8	static
+../source/mef/procPeticion.c:85:6:Switch	8	static
+../source/mef/procPeticion.c:109:6:Acel	40	static
+../source/mef/procPeticion.c:144:10:get_bufferEnv	8	static
+../source/mef/procPeticion.c:148:6:procPeticion	16	static

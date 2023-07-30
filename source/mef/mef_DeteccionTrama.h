@@ -21,14 +21,16 @@
  * Este código está protegido por los derechos de autor y copyright      							*
  * aplicables. Por favor, consulte el archivo ReadMe.txt que acompaña    							*
  * a este archivo para ver los términos de la licencia correspondiente.   							*
+ * **************************************************************************************************
+ * Se reconoce la participación de Martín Pissia como co-autor de la primera versión de este código	*
  ****************************************************************************************************/
 
 #ifndef MEF_DETECCIONTRAMA_H_
 #define MEF_DETECCIONTRAMA_H_
 
 /*==================[inclusions]=============================================*/
+#include <mef/mef_DeteccionTrama_ProcPeticion.h>
 #include <MKL46Z4.h>
-#include "procPeticion.h"
 
 /*==================[cplusplus]==============================================*/
 #ifdef __cplusplus

@@ -21,14 +21,16 @@
  * Este código está protegido por los derechos de autor y copyright      							*
  * aplicables. Por favor, consulte el archivo ReadMe.txt que acompaña    							*
  * a este archivo para ver los términos de la licencia correspondiente.   							*
+ * **************************************************************************************************
+ * Se reconoce la participación de Martín Pissia como co-autor de la primera versión de este código	*
  ****************************************************************************************************/
 
 #ifndef MEF_PLOT3D_H_
 #define MEF_PLOT3D_H_
 
 /*==================[inclusions]=============================================*/
-#include <EnvRec_DATOS/UART_RingBuffer_DMA.h>
-#include <onBoard_KL46/SD2_Mma8451.h>
+#include <dataTransfer/dataTransfer_EnvDMA_RecRingBuff.h>
+#include <onBoard/onBoard_Mma8451.h>
 #include <stdio.h>
 #include <stdbool.h>
 
