@@ -1,7 +1,7 @@
 # Graficador de Aceleración con Enlace Inalámbrico - by WSW
-# Diseñado para funcionar en un Cortex M0+ del kit de desarrollo FRDMKL46Z
+Diseñado para funcionar en un Cortex M0+ del kit de desarrollo FRDMKL46Z
 
-#Cómo utilizar:
+# Cómo utilizar:
 
 -> Importa este proyecto en tu IDE Eclipse (para microcontroladores NXP y FLS, utiliza MCUXpresso).
 	File → Import → C/C++ → Existing Code as Makefile Project 
@@ -19,7 +19,7 @@
 
 -----------------------------------------------------
 
-##RESUMEN:
+#RESUMEN:
 
 Este trabajo se aplican todos los contenidos temáticos de la asignatura Sistemas Digitales 2 (F.C.E.I.A. – U.N.R.) al utilizar el microcontrolador Cortex M0+ de la placa de desarrollo FRDM-KL46Z en una aplicación práctica con el fin de establecer una comunicación inalámbrica con otro dispositivo. Al mismo tiempo se busca explorar el uso de diversos protocolos, como I2C, SPI y UART, para realizar intercambio de mensajes con periféricos de entrada (sensor de aceleración y pulsadores en este caso) y de salida (pantalla OLED, LCD y LEDs).
 El intercambio de mensajes entre los dos dispositivos es implementado utilizando estructuras de datos de tipo cola circular en la recepción y transacciones a cargo de DMA en la transmisión. En ambos casos el protocolo para comunicarse con el exterior es UART.
