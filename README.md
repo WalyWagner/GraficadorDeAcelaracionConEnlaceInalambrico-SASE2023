@@ -1,4 +1,5 @@
-# Graficador de Aceleración con Enlace Inalámbrico -by WSW
+# Graficador de Aceleración con Enlace Inalámbrico 
+-by WSW-
 Diseñado para funcionar en un Cortex M0+ del kit de desarrollo FRDMKL46Z
 
 # Cómo utilizar:
